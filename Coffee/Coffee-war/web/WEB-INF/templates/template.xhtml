@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/bootstrap.min.css"/>
+        <h:outputStylesheet name="css/font-awesome.css"/>
+        <h:outputStylesheet name="css/default.css"/>
+        <h:outputStylesheet name="css/layout.css"/>
+
+        <h:outputScript name="js/jquery-2.2.4.min.js" target="head"/>
+        <h:outputScript name="js/bootstrap.js" target="head"/>
+        <h:outputScript name="js/layout.js" target="head"/>
+        <title>Coffee shop</title>
+    </h:head>
+    <h:form>
+        <h:body class="nav-md">
+            <div class="container body">
+                <div class="main_container">
+                    <div class="col-md-3 left_col">
+                        <div class="left_col scroll-view">
+                            <div class="navbar nav_title" style="border: 0;">
+                                <a href="#{request.contextPath}/" class="site_title">
+                                    <i class="fa fa-paw"></i> <span>The Coffee Shop</span>
+                                </a>
+                            </div>
+                            <div class="clearfix"></div>
+                            <br />
+                            <!-- sidebar menu -->
+                            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                                <div class="menu_section">
+                                    <h3>General</h3>
+                                    <ul class="nav side-menu">
+                                        <li>
+                                            <a><i class="fa fa-home"></i>Sản phẩm<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li>
+                                                    <h:commandLink action="/Product/ProductManagement?faces-redirect=true" value="Quản lý sản phẩm"/>
+                                                </li>
+                                                <li>  
+                                                    <h:commandLink action="/Product/GroupProductManagement?faces-redirect=true" value="Quản lý nhóm sản phẩm"/>
+                                                </li>
+                                                <li>
+                                                    <h:commandLink action="/Product/UnitManagement?faces-redirect=true" value="Quản lý đơn vị sản phẩm"/>
+
+                                                    <ul class="nav child_menu">
+                                                        <li class="sub_menu">
+                                                            <a href="#">Place Holder</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Place Holder</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Place Holder</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a><i class="fa fa-edit"></i> Bàn <span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li>
+                                                    <h:commandLink action="/Table/TableManagement?faces-redirect=true" value=" Quản lý danh sách bàn"/>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a><i class="fa fa-edit"></i> Nhập hàng <span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li>
+                                                    <h:commandLink action="/Receiptnote/ReceiptnoteManagement?faces-redirect=true" value=" Quản lý nhập hàng"/>
+                                                </li>
+                                                <li>
+                                                    <h:commandLink action="/Receiptnote/ProviderManagement?faces-redirect=true" value=" Quản lý nhà cung cấp"/>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a><i class="fa fa-line-chart"></i> Báo cáo <span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li>
+                                                    <h:commandLink action="/Report/RevenueReport?faces-redirect=true" value="Báo cáo doanh thu"/>
+                                                </li>
+                                                <li>
+                                                    <h:commandLink action="/Report/ProductReport?faces-redirect=true" value="Báo cáo sản phẩm"/>
+                                                </li>
+                                                <li>
+                                                    <h:commandLink action="/Report/ImportReport?faces-redirect=true" value="Báo cáo nhập hàng"/>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="menu_section">
+                                    <h3>System</h3>
+                                    <ul class="nav side-menu">
+                                        <li>
+                                            <a><i class="fa fa-users"></i> Phân Quyền <span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li>
+                                                    <h:commandLink action="/Employee/EmployeeManagement?faces-redirect=true" value="Quản lý nhân viên"/>
+                                                </li>
+                                                <li>
+                                                    <h:commandLink action="/User/UserManagement?faces-redirect=true" value="Quản lý người dùng"/>
+                                                </li>
+                                            </ul>
+                                        </li>     
+                                        <li>
+                                            <a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /sidebar menu -->
+                            <!-- /menu footer buttons -->
+                            <div class="sidebar-footer hidden-small">
+                                <a data-toggle="tooltip" data-placement="top" title="Settings">
+                                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                </a>
+                                <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                                    <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                                </a>
+                                <a data-toggle="tooltip" data-placement="top" title="Lock">
+                                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                                </a>
+                                <a data-toggle="tooltip" data-placement="top" title="Logout">
+                                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                            <!-- /menu footer buttons -->
+                        </div>
+                    </div>
+                    <!-- top navigation -->
+                    <div class="top_nav">
+                        <div class="nav_menu">
+                            <div class="" role="navigation">
+                                <div class="nav toggle">
+                                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                                </div>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="">
+                                        <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <h:graphicImage library="images" name="avatar.jpg" /> #{session.getAttribute("user")}
+                                            <span class=" fa fa-angle-down"></span>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                            <li>
+                                                <a href="javascript:;">  Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span class="badge bg-red pull-right">50%</span>
+                                                    <span>Settings</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">Help</a>
+                                            </li>
+                                            <li>
+                                                <h:commandLink action="#{loginBean.Logout}" value="Đăng xuất">
+                                                    <i class="fa fa-sign-out pull-right"></i>
+                                                </h:commandLink>
+                                            </li>
+                                        </ul>
+                                    </li>                        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /top navigation -->
+                    <!-- page content -->
+                    <div class="right_col" role="main">
+                        <ui:insert name="content"></ui:insert>
+                    </div>
+                    <!-- /page content -->
+                    <!-- footer content -->
+                    <div id="footer">
+                        <div class="pull-right">
+                            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- /footer content -->
+                </div>
+            </div>
+
+        </h:body>
+    </h:form>
+</html>
